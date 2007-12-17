@@ -11,7 +11,6 @@ Patch:		rox-systemtray-0.2-new-clib.patch
 Requires:       rox
 BuildRequires: libgtk+2-devel
 BuildRequires: librox-c-devel >= 2.1.6
-Buildroot: %_tmppath/%name-%version
 
 %description
 Display status icons in a rox panel applet. This implements the freedesktop.org
