@@ -1,7 +1,7 @@
 %define oname SystemTray
 Name:		rox-systray
 Version:	0.2
-Release: %mkrel 8
+Release: %mkrel 9
 Summary:	Tray for rox-desktop
 Group:		Graphical desktop/Other
 License:	GPL
