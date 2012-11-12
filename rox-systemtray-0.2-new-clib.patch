@@ -1,0 +1,77 @@
+--- SystemTray/src/main.h.clib	2003-07-12 18:51:14.000000000 +0200
++++ SystemTray/src/main.h	2006-01-02 13:10:31.000000000 +0100
+@@ -6,7 +6,7 @@
+ #include <gtk/gtk.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include "rox.h"
++#include <rox/rox.h>
+ 
+ extern GtkWidget *plug;
+ 
+--- SystemTray/src/main.c.clib	2003-07-12 18:51:14.000000000 +0200
++++ SystemTray/src/main.c	2006-01-02 13:10:43.000000000 +0100
+@@ -33,7 +33,7 @@
+ 
+ #include "main.h"
+ #include "i18n.h"
+-#include "applet.h"
++#include <rox/applet.h>
+ #include "tray.h"
+ #include "balloon.h"
+ 
+@@ -160,12 +160,6 @@
+     return gdk_handler(display, error);
+ }
+ 
+-typedef struct applet_info {
+-  PanelLocation loc;
+-  int margin;
+-} AppletInfo;
+-AppletInfo *get_position(GtkWidget *plug);
+-
+ #define SHORT_OPS "hv"
+ 
+ #ifdef HAVE_GETOPT_LONG
+@@ -231,7 +225,7 @@
+       window_id = atol(argv[1]);
+       plug = gtk_plug_new(window_id);
+ 
+-      info = get_position(plug);
++      info = rox_applet_get_position(plug);
+       if (info) 
+ 	{
+ 	  location = info->loc;
+--- SystemTray/src/tray.c.clib	2003-07-14 23:14:08.000000000 +0200
++++ SystemTray/src/tray.c	2006-01-02 13:10:31.000000000 +0100
+@@ -24,7 +24,7 @@
+ #include "config.h"
+ 
+ #include "main.h"
+-#include "applet.h"
++#include <rox/applet.h>
+ #include "tray.h"
+ #include "balloon.h"
+ 
+--- SystemTray/src/balloon.c.clib	2003-07-12 18:51:14.000000000 +0200
++++ SystemTray/src/balloon.c	2006-01-02 13:10:31.000000000 +0100
+@@ -22,7 +22,7 @@
+ /* balloon.c - code for handling system tray balloon messages */
+ 
+ #include "main.h"
+-#include "applet.h"
++#include <rox/applet.h>
+ #include "tray.h"
+ #include "balloon.h"
+ 
+--- SystemTray/src/i18n.c.clib	2003-07-12 18:51:14.000000000 +0200
++++ SystemTray/src/i18n.c	2006-01-02 13:10:31.000000000 +0100
+@@ -35,7 +35,7 @@
+ //#include "global.h"
+ 
+ //#include "support.h"
+-#include "choices.h"
++#include <rox/choices.h>
+ //#include "options.h"
+ #include "i18n.h"
+ //#include "gui_support.h"
