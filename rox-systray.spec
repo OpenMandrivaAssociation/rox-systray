@@ -5,7 +5,7 @@ Release: %mkrel 9
 Summary:	Tray for rox-desktop
 Group:		Graphical desktop/Other
 License:	GPL
-URL:		http://home.comcast.net/~andyhanton/software
+URL:		https://home.comcast.net/~andyhanton/software
 Source0:	http://home.comcast.net/~andyhanton/software/%oname-%version.tar.bz2
 Patch:		rox-systemtray-0.2-new-clib.patch
 Requires:       rox
